@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title><%= title %></title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" href="/partials/css/html.css" />
+    <link rel="icon" type="image/x-icon" href="/partials/images/favIcon.png" />
+
+    <% if (typeof styles !== "undefined" && styles) { styles.forEach(function(style) { %>
+        <link rel="stylesheet" href="/<%= style %>" />
+    <% })}; %>
+
+    <% if (typeof scripts !== "undefined" && scripts) { scripts.forEach(function(script) { %>
+        <script src="/<%= script %>" defer></script>
+    <% })}; %>
+
+    <script src="https://kit.fontawesome.com/8304ccfbd0.js" crossorigin="anonymous" defer></script>
+</head>

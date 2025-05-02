@@ -1,0 +1,12 @@
+<h1>User</h1>
+
+<% if (typeof error !== "undefined" && error ) { %>
+    <p class="error"><%= error %></p>
+<% } %>
+
+<% if (typeof user !== "undefined" && user ) { %>
+    <p><%= user.login %></p>
+    <p><%= user.email %></p>
+
+    <a href="/user/logout">Wyloguj się</a>;
+<% } %>

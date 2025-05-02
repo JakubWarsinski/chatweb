@@ -1,0 +1,51 @@
+<%- include('../../partials/views/html', {
+    title : 'Panel',
+    styles : [ 'user/css/dashboard.css', 'partials/css/dashboard-header.css', 'partials/css/dashboard-footer.css' ],
+    scripts : [ 'user/js/loadUser.js' ]
+});%>
+<body>
+    <%- include('../../partials/views/dashboard-header');%>
+
+    <main>
+        <% if (typeof error !== "undefined" && error ) { %>
+            <p class="error"><%= error %></p>
+        <% } %>
+
+        <ul id="friends-list">
+        <% if(typeof friends !== 'undefined' && friends) { %>
+            <% friends.forEach(function(friend) { %>
+                <li data-id="<%= friend.friend_id %>">
+                    <img src="<%= friend.picture%>" alt="Avatar" />
+                    
+                    <div>
+                        <p><%= friend.login %></p>
+                        <p><%= friend.name %> <%= friend.surname %></p>
+                    </div>
+
+                    <div>
+                        <% if(friend.is_active) { %>
+                            <i class="fa-solid fa-face-smile"></i>
+                        <%} else {%>
+                            <i class="fa-solid fa-face-dizzy"></i>
+                        <%}%>
+
+                        <div>
+                            <i class="fa-solid fa-comment"></i>
+                            <p><%= friend.unread_messages %></p>
+                        </div>
+
+                        <button><i class="fa-solid fa-ban"></i></button>
+
+                        <button><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </li>
+            <%})%>
+        <%}%>
+        </ul>
+
+        <button id="load-more">Pokaż więcej</button>
+    </main>
+
+    <%- include('../../partials/views/dashboard-footer');%>
+</body>
+</html>

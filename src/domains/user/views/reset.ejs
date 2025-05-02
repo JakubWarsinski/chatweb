@@ -1,0 +1,40 @@
+<%- include('../../partials/views/html', {
+    title : 'Logowanie',
+    styles : [ 'user/css/login.css', 'partials/css/home-header.css', 'partials/css/home-footer.css' ],
+    scripts : [ 'user/js/codeReset.js' ]
+});%>
+
+<body>
+    <%- include('../../partials/views/home-header');%>
+
+    <main>
+        <section>
+            <h1>Potwierdź kod</h1>
+
+            <form action="/user/reset" method="POST">
+                <% if (typeof error !== "undefined" && error ) { %>
+                    <p class="error"><%= error %></p>
+                <% } %>
+
+                <% if (typeof code !== "undefined" && code ) { %>
+                    <p><i>Twój kod: <b><%= code %></b></i></p>
+                <% } %>
+
+                <div class="form-div">
+                    <label for="code">Kod:</label>
+                    <input type="text" id="code" name="code" placeholder="Kod..." maxlength="6" pattern="\d{6}" inputmode="numeric" autocomplete="off" required>
+                </div>
+
+                <div class="form-div">
+                    <label for="password">Hasło:</label>
+                    <input type="password" id="password" name="password" autocomplete="new-password" placeholder="Nowe hasło..." required>
+                </div>
+
+                <button type="submit">Zresetuj</button>
+            </form>
+        </section>
+    </main>
+
+    <%- include('../../partials/views/home-footer');%>
+</body>
+</html>

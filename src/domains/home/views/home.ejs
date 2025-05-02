@@ -1,0 +1,39 @@
+<%- include('../../partials/views/html', {
+    title : 'Strona Główna',
+    styles : [ 'home/css/home.css', 'partials/css/home-header.css', 'partials/css/home-footer.css' ],
+    scripts : [ 'home/js/home.js' ]
+});%>
+<body>
+    <%- include('../../partials/views/home-header');%>
+
+    <main>
+        <% if (typeof error !== "undefined" && error ) { %>
+            <p class="error"><%= error %></p>
+        <% } %>
+
+        <div>
+            <h1>Rozmawiaj swobodnie i bezpiecznie.</h1>
+            <p>Nasz komunikator pozwala na <b>szybką</b> i <b>wygodną</b> wymianę wiadomości z innymi użytkownikami — twórz grupy, dziel się informacjami i bądź w kontakcie z każdym, gdziekolwiek jesteś.</p>
+        </div>
+
+        <a href="/user" id="typing-heading">Zacznij rozmowę</a>
+
+        <ul>
+            <li>
+                <p></i>Ilość użytkowników:</p>
+                <b><i class="fa-solid fa-user-secret"></i><% if(typeof userCount !== 'undefined') {%><%= userCount %><%}%></b>
+            </li>
+            <li>
+                <p></i>Ilość wysłanych wiadomości:</p>
+                <b><i class="fa-solid fa-message"></i><% if(typeof messageCount !== 'undefined') {%><%= messageCount %><%}%></b>
+            </li>
+            <li>
+                <p></i>Ilość utworzonych grup:</p>
+                <b><i class="fa-solid fa-users"></i><% if(typeof groupCount !== 'undefined') {%><%= groupCount %><%}%></b>
+            </li>
+        </ul>
+    </main>
+
+    <%- include('../../partials/views/home-footer');%>
+</body>
+</html>

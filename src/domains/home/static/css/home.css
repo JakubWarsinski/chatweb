@@ -1,0 +1,90 @@
+body {
+    background: url('/partials/images/background.svg') repeat;
+    background-size: 6%; 
+    color: #fdfff8ff;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+}
+
+main div {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 50%;
+    text-align: center;
+}
+
+main div h1 {
+    font-size: 2em;
+}
+
+main div p {
+    color: white;
+    font-size: 1.1em;
+}
+
+main div p b {
+    color: #a4ff00ff;
+    font-weight: normal;
+}
+
+main a {
+    display: block;
+    justify-content: center;
+    padding: 0.3em 0.5em 0.3em 0.5em;
+    width: 9.3em;
+    font-size: 1.5em;
+    background-color: #60c500ff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    color: #fdfff8ff;
+    border: none;
+    border-radius: 10px 0 10px 0;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out, transform 0.2s ease;
+}
+
+main a:hover {
+    transform: scale(1.05);
+    background-color: #a4ff00ff;
+}
+
+main ul {
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+}
+
+main ul li {
+    padding: 1.2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+    gap: 0.8em;
+}
+
+main ul li p {
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+main ul li b {
+    color: #a4ff00ff;
+    display: flex;
+    gap: 0.4em;
+    font-size: 2.2em;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+}

@@ -1,0 +1,29 @@
+header {
+    padding: 15px 0;
+    text-align: center;
+    background-color: #121212ff;
+    border-bottom: 1px solid white;
+}
+
+header a {
+    display: block;
+    transition: transform 0.2s ease;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+header a:hover {
+    transform: scale(1.02);
+}
+
+header img {
+    width: auto;
+    max-height: 70px;
+}
+
+@media (max-width: 400px) {
+    header img {
+        max-height: 50px;
+    }
+}
